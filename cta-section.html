@@ -1,0 +1,111 @@
+<style>
+    .full-width-section {
+        display: flex;
+        width: 100%;
+    }
+
+    .text-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        flex: 1;
+        padding: 100px 50px;
+    }
+
+    .text-column h2,
+    .text-column h3,
+    .text-column p {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .text-column h2 {
+        font-size: 28px;
+    }
+
+    .text-column h3 {
+        font-size: 22px;
+    }
+
+    .text-column p {
+        font-size: 18px;
+    }
+
+    .image-column {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .image-column img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+
+    .cta-button {
+        background-color: #030320;
+        color: white;
+        border: none;
+        padding: 15px 40px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        width: fit-content;
+        border-radius: 5px;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+
+    .cta-button:hover {
+        background-color: #070747;
+    }
+
+    .cta-button a {
+        color: #FFF !important;
+        text-decoration: unset !important;
+    }
+
+    .cta-button a:hover {
+        color: #FFF !important;
+    }
+
+    @media (max-width: 767px) {
+        .full-width-section {
+            flex-direction: column-reverse;
+        }
+
+        .text-column {
+            flex: 1;
+            padding: 100px 50px 0px 50px;
+        }
+
+        .image-column img {
+            height: 350px;
+            width: 100%;
+        }
+    }
+</style>
+
+<body>
+    <div class="full-width-section">
+        <div class="text-column">
+            <h2>Lorem Ipsum</h2>
+            <h3>Lorem Ipsum Dolor Sit Amet</h3>
+            <p>Est cupidatat sunt sint labore exercitation adipisicing consectetur do sint qui. In commodo eiusmod
+                consequat ullamco cupidatat velit pariatur incididunt magna magna ad proident. Do exercitation et
+                voluptate officia est duis aliqua quis anim labore ea velit.</p>
+            <button class="cta-button"><a href="mailto:test@test.com">Lorem Ipsum</a></button>
+        </div>
+        <div class="image-column">
+            <img src="https://placehold.co/1000x500" alt="Descriptive image">
+        </div>
+    </div>
+</body>

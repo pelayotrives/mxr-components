@@ -1,0 +1,57 @@
+<style>
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #030320;
+        color: white;
+        padding: 10px 20px;
+        position: sticky;
+        top: 0;
+    }
+
+    .header-logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .header-logo img {
+        max-height: 50px;
+    }
+
+    .header-nav {
+        display: flex;
+    }
+
+    .header-nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+        transition: color 0.3s;
+        font: 600 14px/18px 'Arial', sans-serif;
+    }
+
+    .header-nav a:hover {
+        color: #9f45f4;
+    }
+
+    @media (max-width: 600px) {
+        .header-nav a {
+            margin-left: 10px;
+            font-size: 14px;
+        }
+    }
+</style>
+
+<body>
+    <header class="header">
+        <div class="header-logo">
+            <img src="https://placehold.co/50x50" alt="Main Logo">
+        </div>
+        <nav class="header-nav">
+            <a href="#link1">Link 1</a>
+            <a href="#link2">Link 2</a>
+            <a href="#link3">Link 3</a>
+        </nav>
+    </header>
+</body>

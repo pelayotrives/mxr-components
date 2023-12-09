@@ -1,0 +1,94 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+</head>
+
+<style>
+    .slider {
+        width: 80%;
+        height: fit-content;
+        margin: 20px auto;
+    }
+
+    .slick-slide img {
+        width: 50%;
+        border-radius: .5em;
+        margin: auto;
+    }
+
+    .slick-dots {
+        bottom: -60px;
+    }
+
+    button.slick-prev.slick-arrow {
+        display: none !important;
+    }
+
+    button.slick-next.slick-arrow {
+        display: none !important;
+    }
+</style>
+
+<body>
+    <div class="slider">
+        <div class="slide"><img src="https://placehold.co/100x100"
+                alt="Slider Logo"></div>
+        <div class="slide"><img src="https://placehold.co/100x100"
+                alt="Slider Logo"></div>
+        <div class="slide"><img src="https://placehold.co/100x100"
+                alt="Slider Logo"></div>
+        <div class="slide"><img src="https://placehold.co/100x100"
+                alt="Slider Logo"></div>
+        <div class="slide"><img src="https://placehold.co/100x100"
+                alt="Slider Logo"></div>
+        <div class="slide"><img src="https://placehold.co/100x100"
+                alt="Slider Logo"></div>
+        <div class="slide"><img src="https://placehold.co/100x100"
+                alt="Slider Logo"></div>
+        <div class="slide"><img src="https://placehold.co/100x100"
+                alt="Slider Logo"></div>
+        <div class="slide"><img src="https://placehold.co/100x100"
+                alt="Slider Logo"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.slider').slick({
+                autoplay: true,
+                autoplaySpeed: 2000,
+                arrows: false,
+                dots: true,
+                infinite: true,
+                speed: 500,
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 1,
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+</body>

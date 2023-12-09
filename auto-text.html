@@ -1,0 +1,84 @@
+<style>
+    .self-write-text-container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .self-write-text-wrapper {
+        width: 1200px;
+        margin: 0 auto;
+        padding: 0 32px;
+    }
+
+    #selfWriteText {
+        font: 600 36px/46px "Inter", "sans-serif";
+        text-transform: uppercase;
+        text-align: center;
+        color: #030320;
+        min-height: 200px;
+        opacity: 1;
+        transition: opacity 2s ease-in-out;
+    }
+
+    .colored {
+        color: #FF5733;
+    }
+
+    p.maintext {
+        font-size: 60px;
+    }
+</style>
+
+<body>
+    <main class="self-write-text-container">
+        <section class="self-write-text-wrapper">
+            <p id="selfWriteText"></p>
+        </section>
+    </main>
+    <script>
+        const aText = [
+            "Culpa <span class='colored'>laboris</span>. Adipisicing <span class='colored'>pariatur</span>. Adipisicing <span class='colored'>nisi</span>."
+        ];
+        const iSpeed = 100;
+        let iIndex = 0;
+        let iTextPos = 0;
+        let isTag = false;
+
+        const typewriter = () => {
+            const destination = document.getElementById("selfWriteText");
+
+            if (iIndex < aText.length) {
+                let text = aText[iIndex].substring(0, iTextPos);
+                if (aText[iIndex].charAt(iTextPos) === '<') isTag = true;
+                if (aText[iIndex].charAt(iTextPos) === '>') isTag = false;
+
+                destination.innerHTML = text + (isTag ? '' : '_');
+
+                if (!isTag) {
+                    if (iTextPos++ === aText[iIndex].length) {
+                        destination.innerHTML = text; // Remove cursor at the end
+                        if (iIndex === aText.length - 1) {
+                            setTimeout(() => {
+                                destination.style.opacity = 0;
+                                setTimeout(() => {
+                                    destination.innerHTML = "Lorem <span class='colored'>Ipsum</span>.";
+                                    destination.style.opacity = 1;
+                                }, 2000);
+                            }, 4000);
+                            return;
+                        }
+                        iTextPos = 0;
+                        iIndex++;
+                    }
+                } else {
+                    iTextPos++;
+                }
+                setTimeout(typewriter, isTag ? 0 : iSpeed);
+            }
+        };
+
+        typewriter();
+    </script>
+</body>

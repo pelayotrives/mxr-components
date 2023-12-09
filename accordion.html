@@ -1,0 +1,119 @@
+<style>
+    .acc-section-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 32px;
+        width: 100%;
+    }
+
+    .acc-section-container button {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+    }
+
+    .acc-section-container p {
+        font-family: 'Hind', sans-serif;
+        font-weight: 500;
+    }
+
+
+    .acc-item {
+        background-color: transparent;
+        cursor: pointer;
+        padding: 36px 16px;
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid black;
+        text-align: left;
+        outline: none;
+        transition: 0.4s;
+    }
+
+    .acc-item:hover {
+        background-color: #F6F6F6;
+    }
+
+    .acc-panel {
+        padding: 0 18px;
+        margin: 28px 0 0 0;
+        display: none;
+        background-color: transparent;
+        overflow: hidden;
+    }
+
+    .acc-item:after {
+        content: '\002B';
+        color: #777;
+        float: right;
+    }
+
+    .acc-active:after {
+        content: "\2212";
+    }
+</style>
+
+<body>
+    <div class="acc-section-container">
+        <button class="acc-item">Lorem Ipsum</button>
+        <div class="acc-panel">
+            <p>Eu minim pariatur eu elit nulla adipisicing consequat reprehenderit mollit id esse. Lorem minim
+                exercitation sunt cillum labore Lorem qui elit pariatur elit cupidatat. Voluptate labore cupidatat irure
+                eiusmod in laborum eu. Voluptate reprehenderit sint duis deserunt anim minim sit id id nulla elit
+                deserunt id dolore. Nulla officia nostrud nisi velit voluptate cillum dolor reprehenderit voluptate
+                dolor cupidatat non aute.</p>
+
+                <p>Nostrud eiusmod veniam quis voluptate quis amet veniam. Proident reprehenderit ut occaecat in eiusmod
+                labore dolore officia ut dolor magna eu. Proident laborum sit exercitation elit officia commodo irure.
+                Cillum sunt nostrud dolor qui officia incididunt nisi cupidatat qui pariatur. Eiusmod occaecat veniam
+                deserunt pariatur labore do esse labore consectetur. Sit nulla fugiat culpa velit.</p>
+        </div>
+
+        <button class="acc-item">Lorem Ipsum</button>
+        <div class="acc-panel">
+            <p>Minim ex eiusmod aliqua enim qui aute anim. Veniam ea ex sint non tempor exercitation incididunt
+                occaecat. Elit dolore sint non magna duis occaecat ad minim consequat proident deserunt ipsum. Pariatur
+                fugiat est deserunt eu labore. Mollit aliqua proident magna irure sit commodo qui non Lorem tempor
+                pariatur.</p>
+
+                <p>Et sint pariatur id fugiat officia nulla excepteur amet deserunt duis elit esse velit tempor. Et tempor
+                eu do proident dolore id dolore deserunt quis quis nulla voluptate elit. Velit exercitation adipisicing
+                aliquip excepteur nisi consectetur exercitation Lorem laboris et incididunt cillum. Incididunt sunt
+                minim culpa exercitation id cupidatat magna non. Exercitation dolore cupidatat in sint officia
+                incididunt elit. Ut qui deserunt fugiat do irure tempor tempor dolore esse nisi reprehenderit aliquip
+                aute.</p>
+        </div>
+
+        <button class="acc-item">Lorem Ipsum</button>
+        <div class="acc-panel">
+            <p>Quis ea proident do laborum. Aute mollit consectetur laborum consectetur minim. Duis ut deserunt eiusmod
+                voluptate quis amet laboris magna in laborum. Commodo deserunt ex ea nulla consectetur ullamco do in
+                reprehenderit irure do ullamco laboris mollit.</p>
+
+                <p>Anim fugiat commodo sint amet officia ad. Non proident irure non et et magna culpa. Tempor ex amet
+                adipisicing commodo elit amet do fugiat pariatur veniam. Eiusmod consequat cillum fugiat consectetur
+                nostrud veniam fugiat Lorem sit. Pariatur velit ut consequat consequat.</p>
+
+        </div>
+    </div>
+    <script>
+        var acc = document.getElementsByClassName("acc-item");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                var panel = this.nextElementSibling;
+                var isOpen = panel.style.display === "block";
+
+                for (var j = 0; j < acc.length; j++) {
+                    acc[j].nextElementSibling.style.display = "none";
+                    acc[j].classList.remove("acc-active");
+                }
+
+                if (!isOpen) {
+                    this.classList.add("acc-active");
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>

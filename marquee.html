@@ -1,0 +1,55 @@
+<style>
+    .marquee {
+        width: 100%;
+        background-color: #030320;
+        color: #FFF;
+        white-space: nowrap;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .marquee p {
+        display: inline-block;
+        padding-left: 100%;
+        animation: marquee 15s linear infinite;
+        margin: 20px 0;
+        font: 600 14px/18px 'Arial', sans-serif;
+    }
+
+    .marquee a {
+        color: #FFF;
+        text-decoration: underline;
+    }
+
+
+    .marquee a:hover {
+        color: #6f19bf !important;
+    }
+
+    .marquee p:hover {
+        animation-play-state: paused;
+    }
+
+    @keyframes marquee {
+        0% {
+            transform: translateX(0%);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .marquee p {
+            animation-duration: 10s;
+        }
+    }
+</style>
+
+<body>
+    <div class="marquee">
+        <p>Cupidatat qui qui aute nulla enim ea ut culpa <a href="mailto:test@test.com">aliquip do proiden</a> magna
+            non.</p>
+    </div>
+</body>
